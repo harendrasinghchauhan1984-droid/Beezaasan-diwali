@@ -1,0 +1,414 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diwali Celebration | BEL & AEL</title>
+
+<style>
+:root {
+    --gold: #f8ce78;
+    --cream: #fff4dc;
+    --dark: #160c1c;
+    --wine: #431027;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    color: var(--cream);
+    background:
+        radial-gradient(ellipse at 50% 0%, #692b36 0%, transparent 45%),
+        linear-gradient(145deg, #120a18, #321024 55%, #120a18);
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "✦  ·  ✧  ·  ✦  ·  ✧  ·  ✦  ·  ✧  ·  ✦";
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: #f8ce78;
+    opacity: .65;
+    letter-spacing: 12px;
+    font-size: 13px;
+    pointer-events: none;
+}
+
+.page {
+    width: min(100% - 28px, 1000px);
+    margin: 42px auto;
+    padding: 36px;
+    border: 1px solid rgba(248,206,120,.55);
+    border-radius: 25px;
+    background: rgba(20, 10, 23, .82);
+    box-shadow: 0 20px 80px #0008, inset 0 0 40px #f8ce7808;
+    position: relative;
+}
+
+.hero {
+    text-align: center;
+    padding: 35px 10px 40px;
+}
+
+.eyebrow {
+    color: var(--gold);
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+h1 {
+    margin: 17px 0 10px;
+    color: var(--gold);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(34px, 6vw, 64px);
+    line-height: 1.08;
+    text-shadow: 0 0 30px #f5b94235;
+}
+
+.subtitle {
+    color: #f9e9ce;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+.company {
+    margin-top: 22px;
+    color: #e9cda0;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    line-height: 2;
+    font-weight: bold;
+}
+
+.diya-row {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin: 26px 0 12px;
+}
+
+.diya {
+    font-size: 35px;
+    filter: drop-shadow(0 0 12px #ffae35);
+    animation: glow 2s infinite alternate;
+}
+
+.diya:nth-child(2) { animation-delay: .7s; }
+.diya:nth-child(3) { animation-delay: 1.2s; }
+
+@keyframes glow {
+    from { transform: translateY(0); filter: drop-shadow(0 0 5px #ffae35); }
+    to { transform: translateY(-5px); filter: drop-shadow(0 0 18px #ffd77a); }
+}
+
+.section-heading {
+    text-align: center;
+    margin: 14px 0 28px;
+}
+
+.section-heading h2 {
+    font-family: Georgia, serif;
+    font-size: clamp(25px, 4vw, 36px);
+    color: var(--gold);
+    margin: 0 0 10px;
+}
+
+.section-heading p {
+    color: #e8d8c5;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.events {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.card {
+    min-width: 0;
+    position: relative;
+    overflow: hidden;
+    padding: 25px;
+    border-radius: 18px;
+    background: linear-gradient(145deg, #4b1b34, #251324);
+    border: 1px solid #e6b65a55;
+    transition: transform .25s ease, border-color .25s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: var(--gold);
+}
+
+.card::after {
+    content: "";
+    position: absolute;
+    right: -35px;
+    top: -40px;
+    width: 120px;
+    height: 120px;
+    border: 1px solid #f8ce7835;
+    border-radius: 50%;
+    box-shadow: 0 0 0 12px #f8ce7807, 0 0 0 25px #f8ce7805;
+    pointer-events: none;
+}
+
+.card-top {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.icon {
+    width: 62px;
+    height: 62px;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    border-radius: 17px;
+    background: #f8ce7817;
+    border: 1px solid #f8ce784d;
+    font-size: 30px;
+}
+
+.date {
+    color: var(--gold);
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.day {
+    color: #fff4dc;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.card h3 {
+    margin: 0 0 12px;
+    font-family: Georgia, serif;
+    color: var(--gold);
+    font-size: 23px;
+    line-height: 1.25;
+}
+
+.card p {
+    margin: 0;
+    color: #f1e3d3;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.tag {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 8px 12px;
+    border-radius: 50px;
+    border: 1px solid #f8ce7860;
+    color: #ffdda0;
+    background: #f8ce780c;
+    font-size: 12px;
+}
+
+.note {
+    margin: 30px 0 0;
+    padding: 18px;
+    text-align: center;
+    border-radius: 14px;
+    background: #f8ce780c;
+    border: 1px dashed #f8ce7860;
+    color: #f8e5c7;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.footer {
+    text-align: center;
+    padding: 35px 10px 10px;
+}
+
+.footer h2 {
+    font-family: Georgia, serif;
+    color: var(--gold);
+    font-size: 26px;
+    margin: 0 0 12px;
+}
+
+.footer p {
+    color: #d7c4b6;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.footer .stars {
+    color: var(--gold);
+    letter-spacing: 8px;
+    margin-top: 20px;
+}
+
+@media (max-width: 650px) {
+    .page {
+        margin: 18px auto;
+        padding: 18px;
+        border-radius: 18px;
+    }
+
+    .hero { padding: 28px 5px; }
+
+    .events { grid-template-columns: 1fr; }
+
+    .card { padding: 21px; }
+
+    .subtitle { font-size: 15px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+@media print {
+    body { background: #160c1c !important; }
+    .page { margin: 0 auto; box-shadow: none; }
+    .card { break-inside: avoid; }
+}
+</style>
+</head>
+
+<body>
+<main class="page">
+
+    <header class="hero">
+        <div class="eyebrow">✦ A Festival of Light, Joy & Togetherness ✦</div>
+
+        <h1>Let's Celebrate<br>Diwali!</h1>
+
+        <div class="subtitle">
+            Four days. Four themes. Endless festive memories.
+        </div>
+
+        <div class="company">
+            BEEZAASAN EXPLOTECH LIMITED<br>
+            ASAWARA EARTHTECH LIMITED
+        </div>
+
+        <div class="diya-row" aria-label="Festive diyas">
+            <span class="diya">🪔</span>
+            <span class="diya">✨</span>
+            <span class="diya">🪔</span>
+        </div>
+
+        <div class="subtitle">
+            Gandhinagar & Himmatnagar Offices
+        </div>
+    </header>
+
+    <section>
+        <div class="section-heading">
+            <h2>Your Diwali Line-Up</h2>
+            <p>
+                Get ready to dress up, join the fun and light up the workplace!
+            </p>
+        </div>
+
+        <div class="events">
+
+            <article class="card">
+                <div class="card-top">
+                    <div class="icon">🎨</div>
+                    <div>
+                        <div class="date">04 NOVEMBER 2026</div>
+                        <div class="day">DAY 01</div>
+                    </div>
+                </div>
+
+                <h3>Decorate & Celebrate</h3>
+                <p>
+                    Let's bring the festive spirit alive with beautiful
+                    decorations and creative Diwali vibes.
+                </p>
+                <span class="tag">Dress Code: Black & White</span>
+            </article>
+
+            <article class="card">
+                <div class="card-top">
+                    <div class="icon">🎯</div>
+                    <div>
+                        <div class="date">05 NOVEMBER 2026</div>
+                        <div class="day">DAY 02</div>
+                    </div>
+                </div>
+
+                <h3>Game On!</h3>
+                <p>
+                    Switch on your playful side and get ready for a day
+                    filled with games, laughter and friendly competition.
+                </p>
+                <span class="tag">Bring Your Game Face!</span>
+            </article>
+
+            <article class="card">
+                <div class="card-top">
+                    <div class="icon">🎬</div>
+                    <div>
+                        <div class="date">06 NOVEMBER 2026</div>
+                        <div class="day">DAY 03</div>
+                    </div>
+                </div>
+
+                <h3>Lights, Camera, Bollywood!</h3>
+                <p>
+                    Bring your favourite Bollywood-inspired look and
+                    add a little filmy glamour to the celebrations.
+                </p>
+                <span class="tag">Dress to Impress</span>
+            </article>
+
+            <article class="card">
+                <div class="card-top">
+                    <div class="icon">🪷</div>
+                    <div>
+                        <div class="date">07 NOVEMBER 2026</div>
+                        <div class="day">DAY 04</div>
+                    </div>
+                </div>
+
+                <h3>Tradition in Style</h3>
+                <p>
+                    Celebrate the beauty of Indian traditions and
+                    finish our Diwali week in festive style.
+                </p>
+                <span class="tag">Girls: Saree | Boys: Kurta</span>
+            </article>
+
+        </div>
+    </section>
+
+    <div class="note">
+        ✨ Bring your festive energy, your brightest smiles and your
+        team spirit. Let's make this Diwali celebration memorable! ✨
+    </div>
+
+    <footer class="footer">
+        <h2>One Team. One Celebration. One Bright Diwali.</h2>
+        <p>
+            Wishing everyone a joyful, prosperous and sparkling Diwali.
+        </p>
+        <div class="stars">✦ ✧ ✦ ✧ ✦</div>
+    </footer>
+
+</main>
+</body>
+</html>
